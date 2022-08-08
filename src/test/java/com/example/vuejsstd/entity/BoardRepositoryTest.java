@@ -23,8 +23,8 @@ class BoardRepositoryTest {
     public void LoadBoard() {
         List<Board> boardList = boardRepository.findAll();
 
-
         Board board = boardList.get(0);
         assertThat(board.getTitle()).isEqualTo("게시글 제목1");
+        assertThat(boardList.size()).isEqualTo(10);
     }
 }
