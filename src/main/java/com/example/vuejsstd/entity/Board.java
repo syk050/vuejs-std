@@ -11,23 +11,23 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @NoArgsConstructor
-@Entity
+@Entity(name = "board")
 public class Board {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long idx;
 
     @Column
     private String title;
     private String contents;
     private String author;
-    private LocalDateTime createdAt;
+    private LocalDateTime createdat;
 
     @Builder
-    public Board(String title, String contents, String author, LocalDateTime createdAt) {
+    public Board(String title, String contents, String author, LocalDateTime createdat) {
         this.title = title;
         this.contents = contents;
         this.author = author;
-        this.createdAt = createdAt;
+        this.createdat = createdat;
     }
 }

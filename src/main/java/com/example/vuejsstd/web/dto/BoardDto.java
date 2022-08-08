@@ -12,9 +12,9 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Builder
 public class BoardDto implements Serializable {
-    private Long id;
+    private Long idx;
     private String title;
     private String contents;
     private String author;
-    private String createdAt;
+    private String createdat;
 }
