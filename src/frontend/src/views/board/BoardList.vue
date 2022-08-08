@@ -17,7 +17,7 @@
         <td>{{ row.idx }}</td>
         <td><a v-on:click="fnView(`${row.idx}`)">{{ row.title }}</a></td>
         <td>{{ row.author }}</td>
-        <td>{{ row.created_at }}</td>
+        <td>{{ row.createdat }}</td>
       </tr>
       </tbody>
     </table>
@@ -85,7 +85,7 @@ export default {
         size: this.size
       }
 
-      this.$axios.get(this.$serverUrl + "board/list", {
+      this.$axios.get(this.$serverUrl + "/board/list", {
         params: this.requestBody,
         headers: {}
       }).then((res) => {
