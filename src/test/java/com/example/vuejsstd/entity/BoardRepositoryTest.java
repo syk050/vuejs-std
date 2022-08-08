@@ -21,9 +21,9 @@ class BoardRepositoryTest {
 
     @Test
     public void LoadBoard() {
-        List<BoardEntity> boardList = boardRepository.findAll();
+        List<Board> boardList = boardRepository.findAll();
 
-        BoardEntity board = boardList.get(0);
+        Board board = boardList.get(0);
         assertThat(board.getTitle()).isEqualTo("게시글 제목1");
     }
 

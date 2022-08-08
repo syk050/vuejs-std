@@ -1,7 +1,7 @@
 package com.example.vuejsstd.web;
 
 
-import com.example.vuejsstd.entity.BoardEntity;
+import com.example.vuejsstd.entity.Board;
 import com.example.vuejsstd.services.BoardService;
 import com.example.vuejsstd.web.dto.BoardDto;
 import lombok.RequiredArgsConstructor;
@@ -26,12 +26,12 @@ public class BoardController {
     }
 
     @PostMapping("/board")
-    public BoardEntity create(@RequestBody BoardDto boardDto) {
+    public Board create(@RequestBody BoardDto boardDto) {
         return boardService.create(boardDto);
     }
 
     @PutMapping("/board")
-    public BoardEntity update(@RequestBody BoardDto boardDto) {
+    public Board update(@RequestBody BoardDto boardDto) {
         return boardService.update(boardDto);
     }
 

@@ -1,6 +1,6 @@
 package com.example.vuejsstd.web;
 
-import com.example.vuejsstd.entity.BoardEntity;
+import com.example.vuejsstd.entity.Board;
 import com.example.vuejsstd.entity.BoardRepository;
 import com.example.vuejsstd.web.dto.BoardDto;
 
@@ -51,7 +51,7 @@ class BoardControllerTest {
         assertThat(responseEntity.getStatusCode()).isEqualTo(HttpStatus.OK);
         assertThat(responseEntity.getBody()).isGreaterThan(0L);
 
-        List<BoardEntity> all = boardRepository.findAll();
+        List<Board> all = boardRepository.findAll();
         assertThat(all.get(0).getTitle()).isEqualTo(title);
         assertThat(all.get(0).getContents()).isEqualTo(contents);
     }
