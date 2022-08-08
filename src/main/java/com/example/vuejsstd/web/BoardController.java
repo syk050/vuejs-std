@@ -30,7 +30,7 @@ public class BoardController {
         return boardService.create(boardDto);
     }
 
-    @PatchMapping("/board")
+    @PutMapping("/board")
     public BoardEntity update(@RequestBody BoardDto boardDto) {
         return boardService.update(boardDto);
     }
