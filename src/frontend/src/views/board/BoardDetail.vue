@@ -1,44 +1,43 @@
 <template>
-  <div class="board-detail">
-    <div class="common-buttons">
-      <button type="button" class="w3-button w3-round w3-blue-gray" v-on:click="fnUpdate">수정</button>&nbsp;
-      <button type="button" class="w3-button w3-round w3-red" v-on:click="fnDelete">삭제</button>&nbsp;
-      <button type="button" class="w3-button w3-round w3-gray" v-on:click="fnList">목록</button>
+  <div className="board-detail">
+    <div className="common-buttons">
+      <button type="button" className="w3-button w3-round w3-blue-gray" v-on:click="fnUpdate">수정</button>&nbsp;
+      <button type="button" className="w3-button w3-round w3-red" v-on:click="fnDelete">삭제</button>&nbsp;
+      <button type="button" className="w3-button w3-round w3-gray" v-on:click="fnList">목록</button>
     </div>
 
-    <div class="board-contents">
+    <div className="board-contents">
       <h3>{{ title }}</h3>
       <div>
-        <strong class="w3-large">{{ author }}</strong>
+        <strong className="w3-large">{{ author }}</strong>
         <br>
-        <span>{{ created_at }}</span>
+        <span>{{ createdat }}</span>
       </div>
     </div>
 
-    <div class="board-contents">
+    <div className="board-contents">
       <span>{{ contents }}</span>
     </div>
 
-    <div class="common-buttons">
-      <button type="button" class="w3-button w3-round w3-blue-gray" v-on:click="fnUpdate">수정</button>&nbsp;
-      <button type="button" class="w3-button w3-round w3-red" v-on:click="fnDelete">삭제</button>&nbsp;
-      <button type="button" class="w3-button w3-round w3-gray" v-on:click="fnList">목록</button>
+    <div className="common-buttons">
+      <button type="button" className="w3-button w3-round w3-blue-gray" v-on:click="fnUpdate">수정</button>&nbsp;
+      <button type="button" className="w3-button w3-round w3-red" v-on:click="fnDelete">삭제</button>&nbsp;
+      <button type="button" className="w3-button w3-round w3-gray" v-on:click="fnList">목록</button>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "BoardDetail",
-  data() {
+  data() { //변수생성
     return {
-      requestBody: this.$router.query,
-      idx: this.$router.query.idx,
+      requestBody: this.$route.query,
+      idx: this.$route.query.idx,
 
-      titl: '',
+      title: '',
       author: '',
-      content: '',
-      createat: '',
+      contents: '',
+      createdat: ''
     }
   },
   mounted() {
@@ -49,12 +48,12 @@ export default {
       this.$axios.get(this.$serverUrl + '/board/' + this.idx, {
         params: this.requestBody
       }).then((res) => {
-        this.titl = res.data.title
+        this.title = res.data.title
         this.author = res.data.author
-        this.content = res.data.content
-        this.createat = res.data.createat
-      }).catch((err) =>{
-        if (err.message.indexOf('Network Error') > -1){
+        this.contents = res.data.contents
+        this.createdat = res.data.createdat
+      }).catch((err) => {
+        if (err.message.indexOf('Network Error') > -1) {
           alert('네트워크가 원활하지 않습니다.\n잠시 후 다시 시도해주세요.')
         }
       })
@@ -86,7 +85,7 @@ export default {
   }
 }
 </script>
-
 <style scoped>
+
 
 </style>
