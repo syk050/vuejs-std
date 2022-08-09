@@ -90,7 +90,7 @@ export default {
         })
       } else {
         //UPDATE
-        this.$axios.patch(apiUrl, this.form)
+        this.$axios.put(apiUrl, this.form)
             .then((res) => {
               alert('글이 저장되었습니다.')
               this.fnView(res.data.idx)
