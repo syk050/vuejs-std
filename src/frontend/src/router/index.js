@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import PageHome from '@/views/PageHome.vue'
 import BoardList from "@/views/board/BoardList";
 import BoardDetail from "@/views/board/BoardDetail";
+import BoardWrite from "@/views/board/BoardWrite"
 
 const routes = [
     {
@@ -27,6 +28,12 @@ const routes = [
         name: 'BoardDetail',
         component: BoardDetail
     },
+    {
+        path: '/board/write',
+        name: 'BoardWrite',
+        component: BoardWrite
+    },
+
 ]
 
 const router = createRouter({
