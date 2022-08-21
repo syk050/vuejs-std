@@ -8,9 +8,11 @@
       <input type="text" v-model="title" class="w3-input w3-border" placeholder="제목을 입력해주세요.">
       <input type="text" v-model="author" class="w3-input w3-border" placeholder="작성자를 입력해주세요." v-if="idx === undefined">
     </div>
-    <div class="board-contents">
-      <textarea id="" cols="30" rows="10" v-model="contents" class="w3-input w3-border" style="resize: none;">
-      </textarea>
+    <div id="ckeditor">
+
+<!--      <textarea id="" cols="30" rows="10" v-model="contents" class="w3-input w3-border" style="resize: none;">-->
+<!--      </textarea>-->
+      <ckeditor :editor="editor" v-model="editorData" :config="editorConfig"></ckeditor>
     </div>
     <div class="common-buttons">
       <button type="button" class="w3-button w3-round w3-blue-gray" v-on:click="fnSave">저장</button>&nbsp;
@@ -20,6 +22,8 @@
 </template>
 
 <script>
+import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+
 export default {
   /** 넘어온 idx가 있으면 서버를 조회해서 글 수정
    *  idx가 없으면 신규로 글 작성할 수 있도록
@@ -27,6 +31,12 @@ export default {
    */
   data() { //변수생성
     return {
+      editor: ClassicEditor,
+      editorData: '<p>Content of the editor.</p>',
+      editorConfig: {
+        // The configuration of the editor.
+      },
+
       requestBody: this.$route.query,
       idx: this.$route.query.idx,
 

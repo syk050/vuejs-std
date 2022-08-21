@@ -12,5 +12,5 @@ app.config.globalProperties.$axios = axios;
 app.config.globalProperties.$serverUrl = "http://localhost:8081";
 
 // #app => index.html에 있는 id가 app인 곳에 표현
-// app.use(router).mount('#app')
-app.use(CKEditor).use(router).mount('#app')
+app.use(router).mount('#app')
+app.use(CKEditor).mount('#ckeditor')
