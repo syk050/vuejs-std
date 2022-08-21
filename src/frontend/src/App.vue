@@ -1,18 +1,31 @@
 <template>
   <PageHeader/> <!-- 헤더 컴포넌트 -->
-  <router-view/>  <!-- 페이지 이동이 표시될 곳 -->
+<!--  <router-view/>  &lt;!&ndash; 페이지 이동이 표시될 곳 &ndash;&gt;-->
+  <div id="app">
+    <ckeditor :editor="editor" v-model="editorData" :config="editorConfig"></ckeditor>
+  </div>
   <PageFooter/> <!-- 푸터 컴포넌트 -->
 </template>
 
 <script>
 import PageHeader from '@/components/PageHeader'
 import PageFooter from '@/components/PageFooter'
+import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 
 export default {
   name: 'App',
   components: {
     PageFooter,
     PageHeader
+  },
+  data() {
+    return {
+      editor: ClassicEditor,
+      editorData: '<p>Content of the editor.</p>',
+      editorConfig: {
+        // The configuration of the editor.
+      }
+    };
   }
 }
 </script>
