@@ -3,6 +3,7 @@ import PageHome from '@/views/PageHome.vue'
 import BoardList from "@/views/board/BoardList";
 import BoardDetail from "@/views/board/BoardDetail";
 import BoardWrite from "@/views/board/BoardWrite"
+import PageFileUpload from "@/views/file/PageFileUpload";
 
 const routes = [
     {
@@ -32,6 +33,11 @@ const routes = [
         path: '/board/write',
         name: 'BoardWrite',
         component: BoardWrite
+    },
+    {
+        path: '/file',
+        name: 'PageFileUpload',
+        component: PageFileUpload
     },
 
 ]
