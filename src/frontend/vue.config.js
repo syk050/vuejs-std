@@ -4,7 +4,7 @@ const path = require('path');
 
 module.exports = defineConfig({
   transpileDependencies: true,
-  outputDir: '../src/main/resources/static',
+  outputDir: '../main/resources/static',
   devServer: {
     port: 8080,
     proxy: {
