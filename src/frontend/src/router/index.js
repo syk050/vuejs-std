@@ -4,6 +4,7 @@ import BoardList from "@/views/board/BoardList";
 import BoardDetail from "@/views/board/BoardDetail";
 import BoardWrite from "@/views/board/BoardWrite"
 import PageFileUpload from "@/views/file/PageFileUpload";
+import PagePayment from "@/views/payment/PagePayment";
 
 const routes = [
     {
@@ -39,6 +40,12 @@ const routes = [
         name: 'PageFileUpload',
         component: PageFileUpload
     },
+    {
+        path: '/pay',
+        name: 'PagePayment',
+        component: PagePayment
+    },
+
 
 ]
 
