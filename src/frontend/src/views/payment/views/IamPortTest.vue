@@ -8,8 +8,8 @@
     <div class="imp-home">
       <div class="nav-container">
         <router-link to="/payment">
-          <credit-card-outlined />
-
+          <StarOutlined />
+          <a-icon type="credit-card" />
           결제
         </router-link>
         <router-link to="/certification">
@@ -20,9 +20,14 @@
     </div>
   </div>
 </template>
+
 <script>
+import { StarOutlined } from '@ant-design/icons-vue'
 export default {
-  name: "IamportTest"
+  name: "IamPortTest",
+  components: {
+    StarOutlined
+  }
 }
 </script>
 
@@ -80,3 +85,4 @@ export default {
   }
 }
 </style>
+
