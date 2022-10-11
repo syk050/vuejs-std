@@ -2,7 +2,6 @@
   <div>
     <h2>IAMPORT 결제 데모</h2>
     <li><button id="iamportPayment" type="button">결제테스트</button></li>
-    <p>aa</p>
   </div>
 </template>
 
@@ -11,7 +10,7 @@ import { iamport } from '../../assets/iamport.2'
 
 export default {
   name: "PagePayment",
-  created() {
+  mounted() {
     let jqueryScript = document.createElement('script')
     jqueryScript.setAttribute('src', 'https://code.jquery.com/jquery-1.12.4.min.js')
     jqueryScript.setAttribute('type', 'text/javascript')
@@ -22,13 +21,13 @@ export default {
     iamportScript.setAttribute('type', 'text/javascript')
     document.head.appendChild(iamportScript)
 
-  },
-  mounted() {
-
+    // let test = document.createElement('script')
+    // test.setAttribute('src', 'http://localhost:8080/js/iamport.js')
+    // test.setAttribute('type', 'text/javascript')
+    // document.head.appendChild(test)
 
     iamport.init();
-  },
-
+  }
 }
 </script>
 
