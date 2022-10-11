@@ -4,10 +4,7 @@ import BoardList from "@/views/board/BoardList";
 import BoardDetail from "@/views/board/BoardDetail";
 import BoardWrite from "@/views/board/BoardWrite"
 import PageFileUpload from "@/views/file/PageFileUpload";
-import PaymentCertification from "@/views/payment/PaymentCertification";
-import IamportTest from "@/views/payment/IamportTest"
-import PaymentHome from "@/views/payment/PaymentHome";
-import PaymentResult from "@/views/payment/PaymentResult";
+import PagePayment from "@/views/payment/PagePayment";
 
 const routes = [
     {
@@ -44,25 +41,11 @@ const routes = [
         component: PageFileUpload
     },
     {
-        path: '/certification',
-        name: 'PaymentCertification',
-        component: PaymentCertification
-    },
-    {
         path: '/pay',
-        name: 'IamportTest',
-        component: IamportTest
+        name: 'PagePayment',
+        component: PagePayment
     },
-    {
-        path: '/payment',
-        name: 'PaymentHome',
-        component: PaymentHome
-    },
-    {
-        path: '/result',
-        name: 'PaymentResult',
-        component: PaymentResult
-    },
+
 
 ]
 
